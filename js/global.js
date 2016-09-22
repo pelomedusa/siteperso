@@ -22,8 +22,32 @@ function hideMainMenu(callback){
         $(".titlebutton").fadeIn();
         if ($(this).is(":last-child")){callback();}
     });
-    $("#containerMenu").animate({backgroundColor : "#2980B9"},400);
+    $("#containerMenu").animate({backgroundColor : "#2980B9"},400, function(){
+        $("#homebutton").fadeIn();
+    });
 
+}
+
+function showMainMenu(){
+    $("#homebutton").hide();
+    $("#containerMenu").removeClass("col-lg-12 col-lg-offset-0").addClass("col-lg-9 col-lg-offset-2").animate({backgroundColor : "white"},400);
+    var height = $("#viewer").show().find(".img-responsive").height();
+    $("#viewer").animate({ height: height }, "200", function () {
+        $(".titlebutton").hide().css({
+            'font-size' : '60px',
+            'line-height' : '80px'
+        });
+
+    });
+
+    $(".menubutton").css({"margin-top":20, "background-color": "white"}).animate({ height: 80, backgroundColor:"#2980B9" }, "200", function(){
+        $(this).each(function(){
+            $(this).removeClass("col-lg-1 col-lg-offset-0").addClass("col-lg-2 col-lg-offset-1")
+        });
+        $("#firstButton").removeClass("col-lg-offset-8").addClass("col-lg-offset-0");
+        $(".titlebutton").fadeIn();
+    });
+    $(".category").hide();
 }
 
 function showProjects() {
@@ -32,7 +56,7 @@ function showProjects() {
 
 
 $(function(){
-    $(".category, .titleimgproject").hide();
+    $(".category, .titleimgproject, #homebutton").hide();
     $( window ).resize(function() {
         var sizewin = $( window ).width();
         if (sizewin>=1200){document.title = 'lg';}
@@ -54,10 +78,16 @@ $(function(){
         });
     });
 
+    $("#homebutton").click(function(){
+        showMainMenu();
+    });
+
     $(".hoverproject").hover(function () {
-        $(this).parent(".imgproject").fadeTo( "fast" , 0.5).find(".titleimgproject").fadeIn("fast");
+        $(this).find(".titleimgproject").fadeIn("fast");
+        $(this).siblings(".imgproject").fadeTo( "fast" , 0.5);
 
     }, function () {
-        $(this).fadeTo( "fast" , 1);
+        $(this).find(".titleimgproject").fadeOut("fast");
+        $(this).siblings(".imgproject").fadeTo( "fast" , 1);
     })
 });

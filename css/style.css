@@ -2,6 +2,10 @@
     font-family: 'yerbaluisa'; /*a name to be used later*/
     src: url('../fonts/yerbaluisa_demo-font-FFP.ttf'); /*URL to font*/
 }
+@font-face {
+    font-family: 'mermaid'; /*a name to be used later*/
+    src: url('../fonts/Mermaid1001.ttf'); /*URL to font*/
+}
 
 #maincontainer {
     height:100vh;
@@ -10,8 +14,18 @@
     padding-top: 0;
 }
 
+#homebutton {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 2000;
+    cursor: pointer;
+    background-image: url("../img/home.png");
+}
+
 #viewer {
-    border: solid 1px #0f0f0f;
     padding: 0px;
     background-color: #0f0f0f;
 
@@ -31,7 +45,7 @@
     height: 80px;
     background-color: #2980B9;
     cursor: pointer;
-    text-align: center
+    text-align: center;
 }
 
 @media(max-width:992px){
@@ -64,14 +78,14 @@
 }
 
 .containerProject{
-    height: 40%;
+    height: 250px;
     margin-top: 20px;
     text-align: center
 
 }
 
 .imgproject{
-    width: 90%;
+    width: 80%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -89,8 +103,10 @@
 }
 
 .titleimgproject{
-    color: #1b6d85;
-    font-size: 30px;
+    font-size: 50px;
     vertical-align: middle;
-    line-height: 200px;
+    line-height: 250px;
+    font-family: "mermaid";
+    color: whitesmoke;
+    text-shadow: black 0.1em 0.1em 0.1em
 }
