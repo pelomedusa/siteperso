@@ -4,7 +4,8 @@
 
 
 function hideMainMenu(callback){
-    $("#containerMenu").addClass("col-lg-12 col-lg-offset-0").removeClass("col-lg-9 col-lg-offset-2");
+    $("#containerMenu").addClass("col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0")
+                        .removeClass("col-lg-9 col-lg-offset-2 col-md-9 col-md-offset-2");
 
     $("#viewer").animate({ height: 0 }, "200", function () {
         $(this).hide();
@@ -16,9 +17,9 @@ function hideMainMenu(callback){
     });
     $(".menubutton").css({"margin-top":0, "background-color": "white"}).animate({ height: 50, backgroundColor:"#2980B9" }, "200", function(){
         $(this).each(function(){
-            $(this).addClass("col-lg-1 col-lg-offset-0").removeClass("col-lg-2 col-lg-offset-1")
+            $(this).addClass("col-lg-1 col-lg-offset-0 col-md-1 col-md-offset-0").removeClass("col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1")
         });
-        $("#firstButton").removeClass("col-lg-offset-0").addClass("col-lg-offset-8");
+        $("#buttonProj").removeClass("col-lg-offset-0 col-md-offset-0").addClass("col-md-offset-8");
         $(".titlebutton").fadeIn();
         if ($(this).is(":last-child")){callback();}
     });
@@ -30,7 +31,7 @@ function hideMainMenu(callback){
 
 function showMainMenu(){
     $("#homebutton").hide();
-    $("#containerMenu").removeClass("col-lg-12 col-lg-offset-0").addClass("col-lg-9 col-lg-offset-2").animate({backgroundColor : "white"},400);
+    $("#containerMenu").removeClass("col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0").addClass("col-lg-9 col-lg-offset-2 col-lg-md col-md-offset-2").animate({backgroundColor : "white"},400);
     var height = $("#viewer").show().find(".img-responsive").height();
     $("#viewer").animate({ height: height }, "200", function () {
         $(".titlebutton").hide().css({
@@ -42,9 +43,9 @@ function showMainMenu(){
 
     $(".menubutton").css({"margin-top":20, "background-color": "white"}).animate({ height: 80, backgroundColor:"#2980B9" }, "200", function(){
         $(this).each(function(){
-            $(this).removeClass("col-lg-1 col-lg-offset-0").addClass("col-lg-2 col-lg-offset-1")
+            $(this).removeClass("col-lg-1 col-lg-offset-0 col-md-1 col-md-offset-0").addClass("col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1")
         });
-        $("#firstButton").removeClass("col-lg-offset-8").addClass("col-lg-offset-0");
+        $("#buttonProj").removeClass("col-lg-offset-8 col-md-offset-8").addClass("col-lg-offset-0 col-md-offset-0");
         $(".titlebutton").fadeIn();
     });
     $(".category").hide();
@@ -52,6 +53,10 @@ function showMainMenu(){
 
 function showProjects() {
     $("#catProjects").fadeIn();
+}
+
+function showAbout() {
+    $("#catAbout").fadeIn();
 }
 
 
@@ -71,12 +76,8 @@ $(function(){
         $(this).animate({ backgroundColor: "#2980B9" }, "fast");
     });
 
-    $(".menubutton").click(function(){
-        event.stopImmediatePropagation();
-        hideMainMenu(function () {
-            showProjects();
-        });
-    });
+    $("#buttonProj").click(function(){hideMainMenu(function () {showProjects();});});
+    $("#buttonAbout").click(function(){hideMainMenu(function () {showAbout();});});
 
     $("#homebutton").click(function(){
         showMainMenu();

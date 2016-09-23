@@ -79,9 +79,13 @@
 
 .containerProject{
     height: 250px;
-    margin-top: 20px;
-    text-align: center
-
+    margin-top: 50px;
+    text-align: center;
+}
+@media(max-width: 1200px){
+    .containerProject {
+        margin-top: 0;
+    }
 }
 
 .imgproject{
