@@ -6,111 +6,182 @@
     font-family: 'mermaid'; /*a name to be used later*/
     src: url('../fonts/Mermaid1001.ttf'); /*URL to font*/
 }
+html {
+    max-height:100vh;
+    overflow: hidden;
 
+}
 #maincontainer {
     height:100vh;
-    max-height: 100vh;
     width: 100%;
-    padding-top: 0;
-}
-
-#homebutton {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    z-index: 2000;
-    cursor: pointer;
-    background-image: url("../img/home.png");
-}
-
-#viewer {
-    padding: 0px;
-    background-color: #0f0f0f;
-
-}
-#viewer img{
-    width: 100%;
-    height: auto;
-}
-
-#containerMenu{
     padding: 0;
-}
-
-
-.menubutton {
-    margin-top: 20px;
-    height: 80px;
     background-color: #2980B9;
-    cursor: pointer;
-    text-align: center;
 }
 
-@media(max-width:992px){
-    #containerMenu{
-        height: 30%;
-    }
-    .menubutton {
-        height: 50%;
+    #homebutton {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        z-index: 2000;
+        cursor: pointer;
+        background-image: url("../img/home.png");
     }
 
-    #viewer img{
+    #viewer {
+        padding: 0px;
+        background-color: #0f0f0f;
         height: auto;
-        width: auto;
+
     }
-}
+        #viewer img{
+            width: 100%;
+            height: auto;
+        }
 
-.titlebutton{
-    color: whitesmoke;
-    font-family: "yerbaluisa";
-    font-size: 60px;
-    line-height: 80px;
-    vertical-align: middle;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.category{
-    height: calc( 100% - 70px );
-}
-
-.containerProject{
-    height: 250px;
-    margin-top: 50px;
-    text-align: center;
-}
-@media(max-width: 1200px){
-    .containerProject {
-        margin-top: 0;
+    #containerMenu{
+        padding: 0;
+        z-index: 1000;
     }
-}
 
-.imgproject{
-    width: 80%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-}
 
-.hoverproject{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    cursor: pointer;
-}
+        .menubutton {
+            margin-top: 20px;
+            height: 80px;
+            background-color: #2980B9;
+            cursor: pointer;
+            text-align: center;
+            z-index: 2000;
+        }
 
-.titleimgproject{
-    font-size: 50px;
-    vertical-align: middle;
-    line-height: 250px;
-    font-family: "mermaid";
-    color: whitesmoke;
-    text-shadow: black 0.1em 0.1em 0.1em
-}
+        @media(max-width:992px){
+            #containerMenu{
+                height: auto;
+            }
+            .menubutton {
+                height: 50%;
+            }
+
+            #viewer img{
+                height: auto;
+                width: auto;
+            }
+        }
+
+            .titlebutton{
+                color: whitesmoke;
+                font-family: "yerbaluisa", serif;
+                font-size: 50px;
+                line-height: 80px;
+                vertical-align: middle;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+    .category{
+        height: calc( 100% - 50px );
+        background-color: whitesmoke;
+        overflow-x: hidden;
+        overflow-y: auto ;
+    }
+
+        .containerProject{
+            height: 200px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .imgproject{
+                width: 80%;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                cursor: pointer;
+            }
+
+
+        .hoverproject{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+            .titleimgproject{
+                font-size: 50px;
+                vertical-align: middle;
+                line-height: 250px;
+                font-family: "mermaid";
+                color: whitesmoke;
+                text-shadow: black 0.1em 0.1em 0.1em
+            }
+
+
+    #catAbout{
+        padding: 0 ;
+    }
+
+        #leftbar{
+            height: 100%;
+            background-color: #3498DB;
+            padding: 20px 0 0 0;
+        }
+
+            #cvmenu{
+                margin-top: 20px;
+                width: 100%;
+                height: 250px;
+                padding: 0;
+            }
+                .buttoncvmenu{
+                    width: 100%;
+                    height: 50px;
+                    cursor: pointer;
+                    line-height: 50px;
+                    text-align: center;
+                }
+
+                .buttoncvmenu:hover{
+                    background-color: #2980B9;
+                }
+                .selected{
+                    background-color: #2980B9;
+                }
+                #downloadpdf{
+                    margin-top: 50px;
+                }
+
+                    .buttoncvmenu span{
+                        color: white;
+                        font-family: yerbaluisa, serif;
+                        font-size: 30px;
+                        width: 100%;
+                    }
+
+
+
+        #rightpart{
+            height: 100%;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto ;
+        }
+
+            #partExp, #partSkills {visibility: hidden}
+
+            .partcv{
+                width: 100%;
+                height: 100%;
+            }
+
+                .etablissement{
+                    height: 200px;
+                    margin-top: 50px;
+                    background-color: #3498DB;
+                    color: whitesmoke;
+                }
