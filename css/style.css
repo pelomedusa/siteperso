@@ -191,6 +191,7 @@ html {
                         position:relative;
                         overflow: hidden;
                         height: 80px;
+                        max-width: 80px;
                         margin-right: 20px;
                     }
                         .blockskill img:first-child {
