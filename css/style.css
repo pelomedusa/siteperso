@@ -18,16 +18,58 @@ html {
     background-color: #2980B9;
 }
 
-    #homebutton {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 50px;
+    #topbar {
         height: 50px;
-        z-index: 2000;
-        cursor: pointer;
-        background-image: url("../img/home.png");
+        background-color: #2980B9;
+        display: none;
+        padding: 0;
     }
+
+        .buttontopbar {
+            height: 100%;
+            background-color: #2980B9;
+            font-size: 30px;
+            text-align: center;
+
+        }
+
+        .buttontopbar:hover {
+            background-color: #3498DB;
+        }
+
+        .buttontopbar span {
+            color: whitesmoke;
+            font-family: "yerbaluisa", serif;
+            font-size: 30px;
+            line-height: 50px;
+            vertical-align: middle;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+
+        }
+
+        #home {
+            cursor: pointer;
+            background: url("../img/home.png") no-repeat;
+        }
+
+        @media(max-width:992px){
+            #topbar{
+                position: relative;
+            }
+            #home{
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                z-index: 8000000;
+                width: 50px;
+                height: 50px;
+                background-color:#2980B9 ;
+                border-radius: 25px;
+            }
+        }
+
 
     #viewer {
         padding: 0px;
@@ -131,12 +173,35 @@ html {
             background-color: #3498DB;
             padding: 20px 0 0 0;
         }
+        @media(max-width:992px){
+        #leftbar{
+            height: auto;
+            padding: 0;
+        }
+
+            #contPhotoCv img {
+                max-height: 100px;
+                content: url("../img/me_small.jpg");
+                margin-top: 5px;
+            }
+        }
 
             #cvmenu{
-                margin-top: 20px;
-                width: 100%;
-                height: 250px;
                 padding: 0;
+                height: auto;
+            }
+
+            @media(min-width:993px){
+                #cvmenu{
+                    width: 100%;
+                    height: 250px;
+                    margin-top: 20px;
+                }
+
+                #downloadpdf{
+                    margin-top: 50px;
+                }
+
             }
                 .buttoncvmenu{
                     width: 100%;
@@ -146,14 +211,19 @@ html {
                     text-align: center;
                 }
 
+                @media(max-width:992px){
+                    .buttoncvmenu{
+                        width: 49%;
+                        display: inline-block;
+                        margin-top: 5px;
+                    }
+                }
+
                 .buttoncvmenu:hover{
                     background-color: #2980B9;
                 }
                 .selected{
                     background-color: #2980B9;
-                }
-                #downloadpdf{
-                    margin-top: 50px;
                 }
 
                     .buttoncvmenu span{
@@ -191,8 +261,9 @@ html {
                         position:relative;
                         overflow: hidden;
                         height: 80px;
-                        max-width: 80px;
+                        width: 80px;
                         margin-right: 20px;
+                        margin-top: 20px;
                     }
                         .blockskill img:first-child {
                             width: 80px;
